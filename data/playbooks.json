@@ -1,0 +1,44 @@
+[
+  {
+    "id": "germany-entry-job-search",
+    "title": "Germany entry job search",
+    "keywords": ["germany", "almanya", "berlin", "hamburg", "munich", "job", "is", "arbeit", "cv"],
+    "signals": ["low_budget", "job_search", "immigrant_context"],
+    "advice": [
+      "Prioritize jobs with low hiring friction: warehouse, delivery coordination, customer support, hotel operations, retail, cleaning operations, junior sales, and logistics admin.",
+      "Search with English and German keywords because many listings are indexed differently.",
+      "Use a one-page CV with location, work authorization status, languages, availability, and measurable past work.",
+      "Apply in daily batches, then follow up by phone or short email within 48 hours."
+    ],
+    "jobBoards": ["Indeed", "StepStone", "LinkedIn", "Kleinanzeigen Jobs", "Bundesagentur fuer Arbeit", "Zenjob", "Instaff"],
+    "skills": ["basic German phrases", "CV targeting", "job-board search", "interview scripts"]
+  },
+  {
+    "id": "low-budget-agency",
+    "title": "Low budget action plan",
+    "keywords": ["param az", "low budget", "no money", "budget", "rent", "broke"],
+    "signals": ["low_budget"],
+    "advice": [
+      "Prefer actions with zero cash cost and short feedback loops.",
+      "Track outreach volume, interview count, and reply rate instead of waiting for motivation.",
+      "Use free learning resources only until income stabilizes.",
+      "Avoid broad courses until a specific job target is chosen."
+    ],
+    "jobBoards": ["Local Facebook groups", "Kleinanzeigen", "agency websites", "company career pages"],
+    "skills": ["daily pipeline discipline", "simple spreadsheet tracking", "short outreach writing"]
+  },
+  {
+    "id": "digital-upskill-fast",
+    "title": "Fast digital upskill",
+    "keywords": ["skill", "learn", "coding", "ai", "node", "backend", "remote", "digital"],
+    "signals": ["skill_gap", "digital_work"],
+    "advice": [
+      "Pick one monetizable skill for 14 days and produce proof of work.",
+      "For backend-oriented profiles, build small API demos and document them with screenshots.",
+      "Package learning as visible output: GitHub repo, short case study, and outreach message.",
+      "Use AI to draft, but manually verify every technical claim."
+    ],
+    "jobBoards": ["LinkedIn", "Wellfound", "RemoteOK", "Honeypot", "GermanTechJobs"],
+    "skills": ["Node.js API basics", "GitHub portfolio", "API testing", "technical storytelling"]
+  }
+]

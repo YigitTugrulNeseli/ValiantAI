@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Valiant Flow</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <svg class="sprite" aria-hidden="true">
+      <symbol id="icon-plus" viewBox="0 0 24 24">
+        <path d="M12 5v14M5 12h14"></path>
+      </symbol>
+      <symbol id="icon-branch" viewBox="0 0 24 24">
+        <path d="M6 5v5a4 4 0 0 0 4 4h8"></path>
+        <path d="M6 19v-9"></path>
+        <path d="M14 10l4 4-4 4"></path>
+      </symbol>
+      <symbol id="icon-focus" viewBox="0 0 24 24">
+        <path d="M8 3H5a2 2 0 0 0-2 2v3"></path>
+        <path d="M16 3h3a2 2 0 0 1 2 2v3"></path>
+        <path d="M8 21H5a2 2 0 0 1-2-2v-3"></path>
+        <path d="M16 21h3a2 2 0 0 0 2-2v-3"></path>
+        <path d="M9 12h6"></path>
+      </symbol>
+      <symbol id="icon-fit" viewBox="0 0 24 24">
+        <path d="M4 9V5a1 1 0 0 1 1-1h4"></path>
+        <path d="M20 9V5a1 1 0 0 0-1-1h-4"></path>
+        <path d="M4 15v4a1 1 0 0 0 1 1h4"></path>
+        <path d="M20 15v4a1 1 0 0 1-1 1h-4"></path>
+      </symbol>
+      <symbol id="icon-minus" viewBox="0 0 24 24">
+        <path d="M5 12h14"></path>
+      </symbol>
+      <symbol id="icon-chevron" viewBox="0 0 24 24">
+        <path d="M9 18l6-6-6-6"></path>
+      </symbol>
+      <symbol id="icon-trash" viewBox="0 0 24 24">
+        <path d="M3 6h18"></path>
+        <path d="M8 6V4h8v2"></path>
+        <path d="M6 6l1 15h10l1-15"></path>
+      </symbol>
+      <symbol id="icon-copy" viewBox="0 0 24 24">
+        <path d="M8 8h11v11H8z"></path>
+        <path d="M5 16H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v1"></path>
+      </symbol>
+      <symbol id="icon-save" viewBox="0 0 24 24">
+        <path d="M5 4h12l2 2v14H5z"></path>
+        <path d="M8 4v6h8V4"></path>
+        <path d="M8 17h8"></path>
+      </symbol>
+      <symbol id="icon-search" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="7"></circle>
+        <path d="M16 16l5 5"></path>
+      </symbol>
+      <symbol id="icon-x" viewBox="0 0 24 24">
+        <path d="M18 6L6 18"></path>
+        <path d="M6 6l12 12"></path>
+      </symbol>
+      <symbol id="icon-layout" viewBox="0 0 24 24">
+        <path d="M4 6h6v6H4z"></path>
+        <path d="M14 4h6v6h-6z"></path>
+        <path d="M14 14h6v6h-6z"></path>
+        <path d="M10 9h4"></path>
+        <path d="M17 10v4"></path>
+      </symbol>
+      <symbol id="icon-map" viewBox="0 0 24 24">
+        <path d="M4 6l5-2 6 2 5-2v14l-5 2-6-2-5 2z"></path>
+        <path d="M9 4v14"></path>
+        <path d="M15 6v14"></path>
+      </symbol>
+      <symbol id="icon-tag" viewBox="0 0 24 24">
+        <path d="M4 5v6.5L13.5 21 21 13.5 11.5 4H5a1 1 0 0 0-1 1z"></path>
+        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+      </symbol>
+      <symbol id="icon-pin" viewBox="0 0 24 24">
+        <path d="M12 17v5"></path>
+        <path d="M8 3h8l-1 6 3 3v2H6v-2l3-3z"></path>
+      </symbol>
+      <symbol id="icon-undo" viewBox="0 0 24 24">
+        <path d="M9 14l-5-5 5-5"></path>
+        <path d="M4 9h10a6 6 0 0 1 0 12h-3"></path>
+      </symbol>
+      <symbol id="icon-redo" viewBox="0 0 24 24">
+        <path d="M15 14l5-5-5-5"></path>
+        <path d="M20 9H10a6 6 0 0 0 0 12h3"></path>
+      </symbol>
+      <symbol id="icon-download" viewBox="0 0 24 24">
+        <path d="M12 3v12"></path>
+        <path d="M7 10l5 5 5-5"></path>
+        <path d="M5 21h14"></path>
+      </symbol>
+      <symbol id="icon-upload" viewBox="0 0 24 24">
+        <path d="M12 21V9"></path>
+        <path d="M7 14l5-5 5 5"></path>
+        <path d="M5 3h14"></path>
+      </symbol>
+      <symbol id="icon-panel" viewBox="0 0 24 24">
+        <path d="M4 5h16v14H4z"></path>
+        <path d="M9 5v14"></path>
+      </symbol>
+      <symbol id="icon-moon" viewBox="0 0 24 24">
+        <path d="M20 14.2A7.5 7.5 0 0 1 9.8 4a8.7 8.7 0 1 0 10.2 10.2z"></path>
+      </symbol>
+      <symbol id="icon-sun" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="4"></circle>
+        <path d="M12 2v2"></path>
+        <path d="M12 20v2"></path>
+        <path d="M4.93 4.93l1.41 1.41"></path>
+        <path d="M17.66 17.66l1.41 1.41"></path>
+        <path d="M2 12h2"></path>
+        <path d="M20 12h2"></path>
+        <path d="M4.93 19.07l1.41-1.41"></path>
+        <path d="M17.66 6.34l1.41-1.41"></path>
+      </symbol>
+    </svg>
+
+    <main class="flow-app">
+      <aside class="side-panel" aria-label="Project controls">
+        <header class="brand-block">
+          <div class="brand-mark">VF</div>
+          <div>
+            <p class="eyebrow">Valiant Flow</p>
+            <h1>Flow Map</h1>
+          </div>
+        </header>
+
+        <details class="panel-accordion" data-panel="project" open>
+          <summary>
+            <span>Project</span>
+            <strong id="metric-total">0</strong>
+          </summary>
+          <section class="panel-section">
+            <label class="field">
+              <span>Name</span>
+              <input id="project-title" autocomplete="off" maxlength="48">
+            </label>
+            <label class="field search-field">
+              <span>Search node</span>
+              <svg class="field-icon" aria-hidden="true"><use href="#icon-search"></use></svg>
+              <input id="search-input" autocomplete="off" placeholder="Find node">
+            </label>
+            <div class="metrics" aria-label="Project metrics">
+              <div>
+                <strong id="metric-done">0%</strong>
+                <span>Done</span>
+              </div>
+              <div>
+                <strong id="metric-active">0</strong>
+                <span>Active</span>
+              </div>
+            </div>
+          </section>
+        </details>
+
+        <details class="panel-accordion" data-panel="workspace" open>
+          <summary>
+            <span>Workspace</span>
+            <strong id="workspace-count">0 islands</strong>
+          </summary>
+          <section class="panel-section workspace-tools" aria-label="Workspace tools">
+            <label class="field search-field">
+              <span>Find island</span>
+              <svg class="field-icon" aria-hidden="true"><use href="#icon-search"></use></svg>
+              <input id="project-search" autocomplete="off" placeholder="Find island">
+            </label>
+            <div class="template-row">
+              <label class="field template-field">
+                <span>Template</span>
+                <select id="project-template">
+                  <option value="build">Build Sprint</option>
+                  <option value="writing">Writing Flow</option>
+                  <option value="research">Research Map</option>
+                  <option value="launch">Launch Plan</option>
+                  <option value="blank">Blank Island</option>
+                </select>
+              </label>
+              <button class="icon-button" id="create-project-template" type="button" title="Add island from template" aria-label="Add island from template">
+                <svg aria-hidden="true"><use href="#icon-plus"></use></svg>
+              </button>
+            </div>
+            <button class="tool-button workspace-fit" id="fit-workspace" type="button">
+              <svg aria-hidden="true"><use href="#icon-map"></use></svg>
+              Fit Islands
+            </button>
+            <div class="workspace-active">
+              <span>Open island</span>
+              <strong id="workspace-active-title">Workspace</strong>
+            </div>
+          </section>
+        </details>
+
+        <details class="panel-accordion" data-panel="actions" open>
+          <summary>
+            <span>Actions</span>
+            <strong class="save-state" id="save-state">Saved</strong>
+          </summary>
+          <section class="panel-section">
+            <div class="action-grid">
+              <button class="tool-button primary" id="add-child" type="button">
+                <svg aria-hidden="true"><use href="#icon-plus"></use></svg>
+                New Step
+              </button>
+              <button class="tool-button" id="undo-action" type="button">
+                <svg aria-hidden="true"><use href="#icon-undo"></use></svg>
+                Undo
+              </button>
+              <button class="tool-button" id="redo-action" type="button">
+                <svg aria-hidden="true"><use href="#icon-redo"></use></svg>
+                Redo
+              </button>
+              <button class="tool-button" id="focus-node" type="button">
+                <svg aria-hidden="true"><use href="#icon-focus"></use></svg>
+                Focus
+              </button>
+              <button class="tool-button" id="show-all" type="button">
+                <svg aria-hidden="true"><use href="#icon-branch"></use></svg>
+                Full Tree
+              </button>
+              <button class="tool-button" id="reset-layout" type="button">
+                <svg aria-hidden="true"><use href="#icon-layout"></use></svg>
+                Arrange
+              </button>
+              <button class="tool-button subtle-danger" id="reset-flow" type="button">
+                <svg aria-hidden="true"><use href="#icon-trash"></use></svg>
+                Reset
+              </button>
+              <button class="tool-button" id="export-state" type="button">
+                <svg aria-hidden="true"><use href="#icon-download"></use></svg>
+                Export
+              </button>
+              <button class="tool-button" id="import-state" type="button">
+                <svg aria-hidden="true"><use href="#icon-upload"></use></svg>
+                Import
+              </button>
+              <input class="visually-hidden" id="import-state-input" type="file" accept="application/json,.json">
+            </div>
+          </section>
+        </details>
+
+        <details class="panel-accordion compact" data-panel="legend">
+          <summary>
+            <span>Legend</span>
+            <strong>5</strong>
+          </summary>
+          <section class="panel-section legend" aria-label="Legend">
+            <div><span class="legend-dot status-backlog"></span>Backlog</div>
+            <div><span class="legend-dot status-active"></span>Active</div>
+            <div><span class="legend-dot status-review"></span>Review</div>
+            <div><span class="legend-dot status-done"></span>Done</div>
+            <div><span class="legend-dot status-blocked"></span>Blocked</div>
+          </section>
+        </details>
+
+        <div class="side-resize-handle" id="side-resize-handle" role="separator" aria-orientation="vertical" aria-label="Resize controls panel"></div>
+      </aside>
+
+      <section class="canvas-shell" aria-label="Workflow canvas">
+        <header class="canvas-topbar">
+          <div>
+            <p class="eyebrow" id="focus-label">Full tree</p>
+            <h2 id="canvas-title">Website Build Flow</h2>
+          </div>
+          <div class="canvas-controls">
+            <button class="icon-button" id="new-project" type="button" title="New project island" aria-label="New project island">
+              <svg aria-hidden="true"><use href="#icon-plus"></use></svg>
+            </button>
+            <button class="icon-button" id="workspace-toggle" type="button" title="Workspace overview" aria-label="Workspace overview" aria-pressed="false">
+              <svg aria-hidden="true"><use href="#icon-layout"></use></svg>
+            </button>
+            <button class="icon-button" id="toggle-sidebar" type="button" title="Toggle task map" aria-label="Toggle task map">
+              <svg aria-hidden="true"><use href="#icon-panel"></use></svg>
+            </button>
+            <button class="icon-button" id="theme-toggle" type="button" title="Toggle theme" aria-label="Toggle theme">
+              <svg class="theme-icon theme-icon-moon" aria-hidden="true"><use href="#icon-moon"></use></svg>
+              <svg class="theme-icon theme-icon-sun" aria-hidden="true"><use href="#icon-sun"></use></svg>
+            </button>
+            <button class="icon-button" id="zoom-out" type="button" title="Zoom out" aria-label="Zoom out">
+              <svg aria-hidden="true"><use href="#icon-minus"></use></svg>
+            </button>
+            <span class="zoom-readout" id="zoom-readout">100%</span>
+            <button class="icon-button" id="zoom-in" type="button" title="Zoom in" aria-label="Zoom in">
+              <svg aria-hidden="true"><use href="#icon-plus"></use></svg>
+            </button>
+            <button class="icon-button" id="fit-view" type="button" title="Fit view" aria-label="Fit view">
+              <svg aria-hidden="true"><use href="#icon-fit"></use></svg>
+            </button>
+          </div>
+        </header>
+
+        <div class="map-scroll" id="map-scroll" tabindex="0">
+          <div class="stage-scaler" id="stage-scaler">
+            <div class="map-stage" id="map-stage">
+              <div class="project-frame" id="project-frame" aria-label="Current project">
+                <button class="project-chip" id="project-chip" type="button"></button>
+              </div>
+              <div class="workspace-layer" id="workspace-layer"></div>
+              <svg class="connector-layer" id="connector-layer" aria-hidden="true"></svg>
+              <div class="edge-action-layer" id="edge-action-layer"></div>
+              <div class="node-layer" id="node-layer"></div>
+            </div>
+          </div>
+          <div class="workspace-minimap" id="workspace-minimap" aria-label="Workspace minimap">
+            <div class="minimap-head">
+              <span>Islands</span>
+              <button class="icon-button mini-fit" id="minimap-fit" type="button" title="Fit islands" aria-label="Fit islands">
+                <svg aria-hidden="true"><use href="#icon-fit"></use></svg>
+              </button>
+            </div>
+            <div class="minimap-canvas" id="minimap-canvas"></div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="inspector-panel" aria-label="Selected task">
+        <header class="inspector-header">
+          <div>
+            <p class="eyebrow">Flow Detail</p>
+            <h2 id="selected-heading">Root</h2>
+          </div>
+          <button class="icon-button panel-close" id="close-inspector" type="button" title="Close" aria-label="Close selected node">
+            <svg aria-hidden="true"><use href="#icon-x"></use></svg>
+          </button>
+        </header>
+
+        <form class="inspector-form" id="inspector-form">
+          <label class="field">
+            <span>Title</span>
+            <input id="node-title" maxlength="64" autocomplete="off">
+          </label>
+
+          <label class="field">
+            <span>Note</span>
+            <textarea id="node-detail" rows="4"></textarea>
+          </label>
+
+          <div class="field-row">
+            <label class="field">
+              <span>Status</span>
+              <select id="node-status">
+                <option value="backlog">Backlog</option>
+                <option value="active">Active</option>
+                <option value="review">Review</option>
+                <option value="done">Done</option>
+                <option value="blocked">Blocked</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Priority</span>
+              <select id="node-priority">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+                <option value="critical">Critical</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="field-row">
+            <label class="field">
+              <span>Owner</span>
+              <input id="node-owner" maxlength="32" autocomplete="off">
+            </label>
+            <label class="field">
+              <span>Due</span>
+              <input id="node-due" maxlength="32" autocomplete="off">
+            </label>
+          </div>
+
+          <div class="inspector-actions">
+            <button class="tool-button primary" id="inspector-add" type="button">
+              <svg aria-hidden="true"><use href="#icon-plus"></use></svg>
+              Add Step
+            </button>
+            <button class="icon-button" id="duplicate-node" type="button" title="Duplicate" aria-label="Duplicate node">
+              <svg aria-hidden="true"><use href="#icon-copy"></use></svg>
+            </button>
+            <button class="icon-button danger" id="delete-node" type="button" title="Delete" aria-label="Delete node">
+              <svg aria-hidden="true"><use href="#icon-trash"></use></svg>
+            </button>
+          </div>
+        </form>
+
+        <section class="child-list-section">
+          <div class="section-title">
+            <h2>Sub-steps</h2>
+            <span id="child-count">0</span>
+          </div>
+          <div class="child-list" id="child-list"></div>
+        </section>
+      </aside>
+      <div class="app-toast" id="app-toast" role="status" aria-live="polite"></div>
+    </main>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "valiant-flow",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Premium project island workspace and task flow canvas.",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test",
+    "test:visual": "node --test tests/visual-smoke.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
