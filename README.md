@@ -2,6 +2,9 @@
 
 Valiant Flow is a premium workspace for planning daily work as movable project islands and detailed task-flow trees.
 
+<img width="2551" height="1295" alt="grafik" src="https://github.com/user-attachments/assets/1ca7392a-7836-49c3-9f91-9a2a5066dba4" />
+
+
 ## Highlights
 
 - Large dotted workspace canvas with draggable project islands.
