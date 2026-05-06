@@ -21,7 +21,25 @@ Valiant Flow is a premium workspace for planning daily work as movable project i
 PORT=3001 node src/server.js
 ```
 
-Open `http://127.0.0.1:3001/`.
+Then open the local app at:
+
+```text
+http://127.0.0.1:3001/
+```
+
+This local address only works on your own machine. It is not a public GitHub or Netlify link.
+
+## Deploy on Netlify
+
+This repo is ready for Netlify as a static frontend deploy.
+
+Netlify should use these settings:
+
+- Build command: `node --check public/app.js`
+- Publish directory: `public`
+- Node version: `20`
+
+The same settings are included in `netlify.toml`, so a GitHub-connected Netlify site should pick them up automatically on the next deploy.
 
 ## Tests
 
