@@ -27,7 +27,7 @@ PORT=3001 node src/server.js
 Then open the local app at:
 
 ```text
-http://127.0.0.1:3001/
+https://valiantflow.netlify.app/
 ```
 
 This local address only works on your own machine. It is not a public GitHub or Netlify link.
